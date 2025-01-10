@@ -44,6 +44,15 @@ authRouter.post("/login", async (req, res) => {
   }
 });
 
+authRouter.post("/logout", async (req, res) => {
+  try {
+    res.clearCookie("token");
+    res.status(200).send("Logout successful");
+  } catch (error) {
+    res.status(400).send("ERROR: " + error.message);
+  }
+});
+
 /*
 
 app.get("/user", async (req, res) => {
