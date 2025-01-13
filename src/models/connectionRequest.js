@@ -9,10 +9,12 @@ const connectionRequestSchema = mongoose.Schema({
   fromUserId: {
     type: mongoose.Schema.Types.ObjectId,
     required: true,
+    ref: "User",
   },
   senderUserId: {
     type: mongoose.Schema.Types.ObjectId,
     required: true,
+    ref: "User",
   },
 });
 
